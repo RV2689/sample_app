@@ -1,5 +1,6 @@
 require 'spork'
 
+
 Spork.prefork do
   # En charger plus dans ce bloc accélèrera les tests. Cependant, 
   # si vous changez de configuration ou le code des
@@ -28,6 +29,9 @@ Spork.prefork do
     # examples within a transaction, comment the following line or assign false
     # instead of true.
     config.use_transactional_fixtures = true
+    def test_sign_in(user)
+      controller.sign_in(user)
+    end
   end
 end
 

@@ -9,16 +9,15 @@ gem 'sqlite3-ruby', '1.2.5', :require => 'sqlite3'
 
 gem 'rake', '0.9.2'
 
-group :development do
-  gem 'rspec-rails', '2.4.0'
-end
 
 group :test do
+  gem 'rspec-rails', '2.4.0'
   gem 'rspec', '2.4.0'
   gem 'spork', '0.9.0.rc8'
   gem 'webrat', '0.7.1'
-  gem 'autotest'
+  gem 'autotest', '~> 4.4.6'
   gem 'ZenTest'
+  gem 'autotest-fsevent', '~> 0.2.4'
   gem 'autotest-growl', '0.2.9'
 end
 

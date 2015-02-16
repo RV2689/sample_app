@@ -1,5 +1,5 @@
-# Tutoriel Ruby on Rails : Application Exemple
+# Tutoriel Ruby on Rails : première application
 
-C'est l'Application Exemple pour le
-[*Tutoriel Ruby on Rails : Apprendre Rails par l'exemple*](http://railstutorial.org/)
-par [Michael Hartl](http://michaelhartl.com/).
+C'est la première application pour le 
+[*Tutoriel Ruby on Rails : Apprendre Rails par l'exemple*](http://railstutorial.org/) 
+de [Michael Hartl](http://michaelhartl.com/).

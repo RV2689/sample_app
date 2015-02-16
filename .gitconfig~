@@ -1,0 +1,8 @@
+[user] 
+    email = andres.herve@yahoo.fr
+    name = RV
+ [alias] 
+    ci = commit 
+    co = checkout 
+    st = status 
+    br = branch  

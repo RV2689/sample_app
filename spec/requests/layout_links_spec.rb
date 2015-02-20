@@ -1,7 +1,4 @@
-require 'test_helper'
-
-class LayoutLinksTest < ActionDispatch::IntegrationTest
-  fixtures :all
+require 'spec_helper'
 
 describe "Liens du layout" do
 
@@ -60,5 +57,4 @@ describe "Liens du layout" do
                                          :content => "Profil")
     end
   end
-end
 end

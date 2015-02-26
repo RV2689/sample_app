@@ -1,71 +1,72 @@
 require 'spec_helper'
 
-describe SessionsController do
+describe SessionsController do#0
   render_views
 
-  describe "GET 'new'" do
+  describe "GET 'new'" do#1
 
-    it "devrait réussir" do
+    it "devrait reussir" do#2
       get :new
       response.should be_success
-    end
+    end#2
 
-    it "devrait avoir le bon titre" do
+    it "devrait avoir le bon titre" do#2
       get :new
-      response.should have_selector("titre", :content => "S'identifier")
-    end
-  end
+      response.should have_selector("title", :content => "S'identifier")
+    end#2
+  end#1
 
-  describe "POST 'create'" do
+describe "POST 'create'" do#1
 
-    describe "invalid signin" do
+    describe "invalid signin" do#2
 
-      before(:each) do
+      before(:each) do#3
         @attr = { :email => "email@example.com", :password => "invalid" }
-      end
+      end#3
 
-      it "devrait re-rendre la page new" do
+      it "devrait re-rendre la page new" do#3
         post :create, :session => @attr
         response.should render_template('new')
-      end
+      end#3
 
-      it "devrait avoir le bon titre" do
+      it "devrait avoir le bon titre" do#3
         post :create, :session => @attr
         response.should have_selector("title", :content => "S'identifier")
-      end
+      end#3
 
-      it "devait avoir un message flash.now" do
+      it "devait avoir un message flash.now" do#3
         post :create, :session => @attr
         flash.now[:error].should =~ /invalid/i
-      end
-    end
+      end#3
+    end#2
 
-    describe "avec un email et un mot de passe valides" do
+    describe "avec un email et un mot de passe valides" do#2
 
-      before(:each) do
+      before(:each) do#3
         @user = Factory(:user)
         @attr = { :email => @user.email, :password => @user.password }
-      end
+      end#3
 
-      it "devrait identifier l'utilisateur" do
-        post :create, :user => @attr
+      it "devrait identifier l'utilisateur" do#3
+        post :create, :session => @attr
+        controller.current_user.should == @user
         controller.should be_signed_in
-      end
-
-      it "devrait rediriger vers la page d'affichage de l'utilisateur" do
+      end#3
+	
+      it "devrait rediriger vers la page d'affichage de l'utilisateur" do#3
         post :create, :session => @attr
         response.should redirect_to(user_path(@user))
-      end
-    end
-  end
+      end#3
+    end#2
+  end#1
+  
+  describe "DELETE 'destroy'" do#1
 
-  describe "DELETE 'destroy'" do
-
-    it "devrait déconnecter un utilisateur" do
+    it "devrait deconnecter un utilisateur" do#2
       test_sign_in(Factory(:user))
       delete :destroy
       controller.should_not be_signed_in
       response.should redirect_to(root_path)
-    end
-  end
-end
+    end#2
+  end#1
+end#0

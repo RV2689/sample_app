@@ -42,9 +42,6 @@ a:visited {
   color: #069;
 }
 
-
-/* Navigation */
-
 nav {
   float: right;
 }
@@ -79,7 +76,6 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
-
 /* Bouton inscription */
 
 a.signup_button {
@@ -95,7 +91,6 @@ a.signup_button {
   padding: 20px;
 }
 
-
 /* Coins arrondis */
 
 .round {
@@ -104,8 +99,6 @@ a.signup_button {
   border-radius:         10px;
 }
 
-
-/* Pied de page*/
 footer {
   text-align: center;
   margin-top: 10px;
@@ -117,7 +110,6 @@ footer {
 footer nav {
   float: none;
 }
-
 
 /* User show page */
 
@@ -143,15 +135,9 @@ td.sidebar {
   margin-bottom: -15px;
 }
 
-
-
-
 div.field, div.actions {
   margin-bottom: 10px;
 }
-
-
-/* message d'erreur */
 
 .field_with_errors {
   margin-top: 10px;
@@ -195,7 +181,6 @@ div.field, div.actions {
 }
 
 
-/*index utilisateur */
 ul.users {
   margin-top: 1em;
 }

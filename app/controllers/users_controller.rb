@@ -26,13 +26,13 @@ class UsersController < ApplicationController
       flash[:success] = "Bienvenue dans l'Application Exemple !"
       redirect_to @user
     else
-      @titre = "Sign up"
+      @titre = "Inscription"
       render 'new'
     end
   end
 
   def edit
-    @titre = "Édition profil"
+    @titre = "Edition profil"
   end
 
   def update
@@ -41,7 +41,7 @@ class UsersController < ApplicationController
       flash[:success] = "Profil actualisé."
       redirect_to @user
     else
-      @titre = "Édition profil"
+      @titre = "Edition profil"
       render 'edit'
     end
   end

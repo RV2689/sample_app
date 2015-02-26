@@ -1,39 +1,54 @@
 require 'spec_helper'
 
 describe "Liens du layout" do
-
-  it "devrait trouver une page Accueil à '/'" do
+  
+  it "devrait trouver une page Accueil a '/'" do
     get '/'
     response.should have_selector('title', :content => "Accueil")
   end
+
+
 
   it "devrait trouver une page Contact at '/contact'" do
     get '/contact'
     response.should have_selector('title', :content => "Contact")
   end
 
-  it "should have an À Propos page at '/about'" do
+
+
+  it "should have an A Propos page at '/about'" do
     get '/about'
-    response.should have_selector('title', :content => "À Propos")
+    response.should have_selector('title', :content => "A Propos")
   end
 
-  it "devrait trouver une page Iade à '/help'" do
+
+
+  it "devrait trouver une page Aide a '/help'" do
     get '/help'
     response.should have_selector('title', :content => "Aide")
   end
 
-  it "devrait avoir une page d'inscription à '/signup'" do
+
+
+  it "devrait avoir une page d'inscription a '/signup'" do
     get '/signup'
     response.should have_selector('title', :content => "Inscription")
   end
 
+
+
+
   describe "quand pas identifié" do
+
     it "doit avoir un lien de connexion" do
       visit root_path
-      response.should have_selector("a", :href => signin_path,
-                                         :content => "S'identifier")
+      response.should have_selector("a", :href => signin_path, :content => "S'identifier")
     end
+
   end
+
+
+
 
   describe "quand identifié" do
 
@@ -45,16 +60,16 @@ describe "Liens du layout" do
       click_button
     end
 
-    it "devrait avoir un lien de déconnxion" do
+    it "devrait avoir un lien de déconnexion" do
       visit root_path
-      response.should have_selector("a", :href => signout_path,
-                                         :content => "Déconnexion")
+      response.should have_selector("a", :href => signout_path, :content => "Deconnexion")
     end
 
     it "devrait avoir un lien vers le profil" do
       visit root_path
-      response.should have_selector("a", :href => user_path(@user),
-                                         :content => "Profil")
+      response.should have_selector("a", :href => user_path(@user), :content => "Profil")
     end
+
   end
+
 end
